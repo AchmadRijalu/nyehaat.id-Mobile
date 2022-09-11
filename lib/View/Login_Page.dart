@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:nyehaat_id/View/Register_Page.dart';
 import 'package:nyehaat_id/common/styles.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,15 +24,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(elevation: 0, backgroundColor: Colors.transparent),
         body: SafeArea(
             child: Expanded(
-      child: Padding(
-          padding: const EdgeInsets.all(25),
-          child: SingleChildScrollView(
-            child: Container(
-                // color: Colors.amber,
-                padding: const EdgeInsets.only(top: 35),
-                child: Column(
+          child: Padding(
+              padding: const EdgeInsets.all(21),
+              child: SingleChildScrollView(
+                physics: NeverScrollableScrollPhysics(),
+                child: Container(
+                    // color: Colors.amber,
+                    // padding: const EdgeInsets.only(top: 20),
+                    child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Row(
@@ -107,6 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             TextFormField(
                               style: Theme.of(context)!.textTheme.subtitle2,
+                              autofocus: false,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0),
@@ -123,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                               margin:
                                   const EdgeInsets.only(left: 10, bottom: 7),
                               child: Text(
-                                "Email",
+                                "Password",
                                 style: Theme.of(context)!
                                     .textTheme
                                     .subtitle2!
@@ -134,6 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             TextFormField(
                               obscureText: _passwordVisible,
+                              autofocus: false,
                               controller: controller,
                               style: Theme.of(context)!.textTheme.subtitle2,
                               decoration: InputDecoration(
@@ -233,29 +238,32 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 50,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      height: 54.08,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Login",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle2!
-                                  .copyWith(color: Colors.white))
-                        ],
+                    GestureDetector(
+                      child: Container(
+                        padding: const EdgeInsets.all(5),
+                        height: 54.08,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Login",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .subtitle2!
+                                    .copyWith(color: Colors.white))
+                          ],
+                        ),
+                        decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(8),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  spreadRadius: 0.1,
+                                  blurRadius: 0.1,
+                                  offset: Offset(0, 0.8))
+                            ]),
                       ),
-                      decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(8),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey,
-                                spreadRadius: 0.1,
-                                blurRadius: 0.1,
-                                offset: Offset(0, 0.8))
-                          ]),
+                      onTap: () {},
                     ),
                     SizedBox(
                       height: 17,
@@ -272,6 +280,10 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Color(0xff171930).withOpacity(0.5)),
                         ),
                         GestureDetector(
+                          onTap: () => Navigator.push(context,
+                              MaterialPageRoute(builder: ((context) {
+                            return RegisterPage();
+                          }))),
                           child: Container(
                             child: Text(
                               "Daftar di sini",
@@ -288,7 +300,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 )),
-          )),
-    )));
+              )),
+        )));
   }
 }
