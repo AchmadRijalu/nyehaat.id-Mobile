@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:nyehaat_id/View/Home.dart';
 import 'package:nyehaat_id/View/Register_Page.dart';
 import 'package:nyehaat_id/common/styles.dart';
 
@@ -199,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 30,
                     ),
                     Container(
-                      padding: const EdgeInsets.all(7),
+                      padding: const EdgeInsets.all(9),
                       height: 46,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -263,7 +264,10 @@ class _LoginPageState extends State<LoginPage> {
                                   offset: Offset(0, 0.8))
                             ]),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            HomePage.routeNames, (route) => false);
+                      },
                     ),
                     SizedBox(
                       height: 17,
