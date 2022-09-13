@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nyehaat_id/View/Edit_Akun_Page.dart';
 import 'package:nyehaat_id/View/Home.dart';
 import 'package:nyehaat_id/View/Login_Page.dart';
 import 'package:nyehaat_id/View/Profil_Penyakit_Page.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       initialRoute: LoginPage.routeNames,
       routes: {
         LoginPage.routeNames: (context) => LoginPage(),
-        HomePage.routeNames: (context) => HomePage()
+        HomePage.routeNames: (context) => HomePage(),
+        EditAkunPage.routeNames: (context) => EditAkunPage()
       },
     );
   }

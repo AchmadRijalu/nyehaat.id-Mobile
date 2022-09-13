@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
         icon: Icon(Icons.shopping_bag), label: KeranjangPage.pageName),
     BottomNavigationBarItem(icon: Icon(Icons.person), label: AkunPage.pageName),
   ];
+
   List<Widget> _listPageWidget = [MainMenuPage(), KeranjangPage(), AkunPage()];
   @override
   Widget build(BuildContext context) {
