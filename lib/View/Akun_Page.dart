@@ -27,7 +27,7 @@ class _AkunPageState extends State<AkunPage> {
 
 Widget Akun_PageBuild(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(12),
+    padding: const EdgeInsets.all(8),
     child: Container(
         child: Column(
       children: [
