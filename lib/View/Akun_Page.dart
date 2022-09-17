@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:nyehaat_id/View/Edit_Akun_Page.dart';
+import 'package:nyehaat_id/View/Login_Page.dart';
 import 'package:nyehaat_id/common/styles.dart';
 
 class AkunPage extends StatefulWidget {
@@ -16,18 +17,15 @@ class _AkunPageState extends State<AkunPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
-      body: SingleChildScrollView(child: Akun_PageBuild(context)),
-    );
+        body: SafeArea(
+      child: SingleChildScrollView(child: Akun_PageBuild(context)),
+    ));
   }
 }
 
 Widget Akun_PageBuild(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.all(8),
+    padding: const EdgeInsets.all(12),
     child: Container(
         child: Column(
       children: [
@@ -99,7 +97,7 @@ Widget Akun_PageBuild(BuildContext context) {
                               padding: const EdgeInsets.all(12),
                               child: Row(children: [
                                 Icon(
-                                  Icons.filter_list_alt,
+                                  Icons.view_list,
                                   color: primaryColor,
                                 ),
                                 SizedBox(
@@ -337,34 +335,43 @@ Widget Akun_PageBuild(BuildContext context) {
                             )
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(12),
-                              child: Row(children: [
-                                Icon(
-                                  Icons.exit_to_app,
-                                  color: primaryColor,
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "Keluar",
-                                  style: Theme.of(context)!
-                                      .textTheme
-                                      .subtitle2!
-                                      .copyWith(fontSize: 14),
-                                ),
-                              ]),
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_right,
-                              color: primaryColor,
-                            )
-                          ],
-                        )
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamedAndRemoveUntil(context,
+                                  LoginPage.routeNames, (route) => false);
+                            },
+                            child: Container(
+                              color: Colors.white,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(12),
+                                    child: Row(children: [
+                                      Icon(
+                                        Icons.exit_to_app,
+                                        color: primaryColor,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(
+                                        "Keluar",
+                                        style: Theme.of(context)!
+                                            .textTheme
+                                            .subtitle2!
+                                            .copyWith(fontSize: 14),
+                                      ),
+                                    ]),
+                                  ),
+                                  Icon(
+                                    Icons.keyboard_arrow_right,
+                                    color: primaryColor,
+                                  )
+                                ],
+                              ),
+                            ))
                       ],
                     )),
               ],

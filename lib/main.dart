@@ -4,6 +4,7 @@ import 'package:nyehaat_id/View/Home.dart';
 import 'package:nyehaat_id/View/Login_Page.dart';
 import 'package:nyehaat_id/View/Profil_Penyakit_Page.dart';
 import 'package:nyehaat_id/common/styles.dart';
+import 'dart:ffi';
 
 void main() {
   runApp(const MyApp());

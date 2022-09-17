@@ -14,14 +14,21 @@ class _MainMenuPageState extends State<MainMenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(children: [Text("Ini adalah Menu Page")]),
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(children: [
+            Container(
+              child: Row(children: [
+                Text(
+                  "Makan apa hari ini?",
+                  style: Theme.of(context).textTheme.headline5,
+                )
+              ]),
+            )
+          ]),
+        ),
       )),
     );
   }
