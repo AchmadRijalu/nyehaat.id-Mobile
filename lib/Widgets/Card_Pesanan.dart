@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:nyehaat_id/View/Details_Pesanan_Page.dart';
 import 'package:nyehaat_id/common/styles.dart';
 
 class CardPesanan extends StatelessWidget {
@@ -10,7 +11,10 @@ class CardPesanan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (() {}),
+      onTap: (() {
+        //using argument cause of by index
+        Navigator.pushNamed(context, DetailsPesanan.routeNames);
+      }),
       child: Container(
         height: 202,
         decoration: BoxDecoration(
@@ -144,7 +148,7 @@ class CardPesanan extends StatelessWidget {
                                             .subtitle2!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 14),
+                                                fontSize: 12),
                                       ),
                                     )
                                   ],

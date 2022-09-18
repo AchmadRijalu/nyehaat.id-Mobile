@@ -6,7 +6,7 @@ import 'package:nyehaat_id/Widgets/Card_Pesanan.dart';
 import '../common/styles.dart';
 
 class KeranjangPage extends StatefulWidget {
-  static final String pageName = "Keranjang";
+  static final String pageName = "Pesanan";
 
   const KeranjangPage({Key? key}) : super(key: key);
 
@@ -39,6 +39,14 @@ class _KeranjangPageState extends State<KeranjangPage> {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              CardPesanan(),
+              SizedBox(
+                height: 16,
+              ),
+              CardPesanan(),
+              SizedBox(
+                height: 16,
+              ),
               CardPesanan(),
               SizedBox(
                 height: 16,
