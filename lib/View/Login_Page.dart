@@ -283,7 +283,7 @@ class _LoginPageState extends State<LoginPage> {
                               .copyWith(
                                   color: Color(0xff171930).withOpacity(0.5)),
                         ),
-                        GestureDetector(
+                        InkWell(
                           onTap: () => Navigator.push(context,
                               MaterialPageRoute(builder: ((context) {
                             return RegisterPage();

@@ -13,7 +13,10 @@ class CardPesanan extends StatelessWidget {
     return GestureDetector(
       onTap: (() {
         //using argument cause of by index
-        Navigator.pushNamed(context, DetailsPesanan.routeNames);
+        Navigator.pushNamed(
+          context,
+          DetailsPesanan.routeNames,
+        );
       }),
       child: Container(
         height: 202,

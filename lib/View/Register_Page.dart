@@ -5,6 +5,7 @@ import 'package:nyehaat_id/View/Profil_Penyakit_Page.dart';
 import 'package:nyehaat_id/common/styles.dart';
 
 class RegisterPage extends StatefulWidget {
+  static const routeNames = "register page";
   const RegisterPage({Key? key}) : super(key: key);
 
   @override

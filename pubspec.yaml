@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^3.0.1
   gender_picker: ^1.1.0
   provider: ^6.0.3
+  flutter_svg: ^1.1.5
 
 dev_dependencies:
   flutter_test:
